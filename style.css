@@ -1,0 +1,284 @@
+/* ///////////////////////////////////////////////// */
+/* ////////////////INIT////////////////// */
+/* //////////////////////////////////////////////// */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  --primary-gray-blue-dkr: hsl(217, 19%, 35%);
+  --primary-blue-dk: hsl(214, 17%, 51%);
+  --neutral-gray-blue: hsl(212, 23%, 69%);
+  --neutral-gray-blue-lt: hsl(210, 46%, 95%);
+}
+
+/* ///////////////////////////////////////////////// */
+/* ////////////////CARD COMPONENT////////////////// */
+/* //////////////////////////////////////////////// */
+.card-container {
+  min-height: 97vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--neutral-gray-blue-lt);
+  padding: 0 1rem;
+}
+
+.card-component {
+  display: flex;
+  width: 750px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 1px 1px 30px rgb(224, 221, 221);
+}
+
+.left {
+  width: 38%;
+  background: url(./images/drawers.jpg);
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.right {
+  padding: 2rem;
+  width: 62%;
+}
+
+.details h3 {
+  line-height: 1.7rem;
+  font-size: 1.3rem;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-gray-blue-dkr);
+}
+
+.details p {
+  font-size: 13px;
+  line-height: 1.2rem;
+  padding-right: 1.7rem;
+  color: var(--primary-blue-dk);
+}
+
+.bottom-box {
+  display: flex;
+  margin-top: 0.8rem;
+  justify-content: space-between;
+}
+
+.person-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.person-details img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.name-date {
+  font-size: 13px;
+}
+
+.name-date h3 {
+  color: var(--primary-gray-blue-dkr);
+  font-size: 13px;
+}
+.name-date p {
+  color: var(--primary-blue-dk);
+}
+/* ///////////////////////////////////////////////// */
+/* ////////////////TOOLTIP////////////////// */
+/* //////////////////////////////////////////////// */
+.tooltip-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 35px;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: var(--neutral-gray-blue-lt);
+  transition: all 0.25s;
+}
+
+.tooltip {
+  position: absolute;
+  top: 10;
+  left: 10;
+  margin-bottom: 6.5rem;
+  opacity: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  pointer-events: none;
+  transition: all 0.25s;
+  width: 250px;
+  height: 150px;
+}
+
+.tool {
+  background-color: var(--primary-gray-blue-dkr);
+  width: 250px;
+  height: 55px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1.1rem 0;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.tool:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  background-color: var(--primary-gray-blue-dkr);
+  bottom: 55px;
+  left: 47%;
+  transform: rotate(45deg);
+}
+
+.tool ion-icon {
+  font-size: 1.4rem;
+  color: var(--neutral-gray-blue-lt);
+  transition: transform 0.25s;
+}
+
+.tool ion-icon:hover {
+  transform: scale(0.95);
+}
+
+.tooltip-box:hover {
+  background-color: var(--primary-blue-dk);
+}
+
+.tooltip-box:hover .icon ion-icon {
+  color: var(--neutral-gray-blue-lt);
+}
+
+.tooltip-box:hover .tooltip {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.tooltip p {
+  letter-spacing: 0.3rem;
+  font-size: 13px;
+  color: var(--neutral-gray-blue);
+}
+
+.icon ion-icon {
+  font-size: 1.2rem;
+  color: var(--primary-blue-dk);
+  transition: all 0.25s;
+}
+/* ///////////////////////////////////////////////// */
+/* ////////////////ATTRIBUTION  ////////////////// */
+/* //////////////////////////////////////////////// */
+
+.attribution {
+  text-align: center;
+  background-color: var(--neutral-white);
+  color: rgb(59, 52, 52);
+  margin: 0.2rem;
+}
+.frontend-mentor,
+.author {
+  text-decoration: none;
+  color: black;
+}
+
+.author {
+  border: 1px solid transparent;
+  transition: all 0.25s;
+}
+
+.author:active,
+.author:hover {
+  border-bottom: 1px solid black;
+}
+
+/* ///////////////////////////////////////////////// */
+/* ////////////////MEDIA QUERIES////////////////// */
+/* //////////////////////////////////////////////// */
+
+@media only screen and (max-width: 768px) {
+  .card-component {
+    width: 670px;
+  }
+}
+
+@media only screen and (max-width: 685px) {
+  .card-component {
+    max-width: 355px;
+    min-width: 355px;
+    flex-direction: column;
+  }
+
+  .left {
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 220px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .details h3 {
+    font-size: 1rem;
+  }
+
+  .details h3,
+  .details p {
+    padding-right: 0;
+  }
+
+  .tool:before {
+    display: none;
+  }
+
+  .bottom-box {
+    margin-top: 2rem;
+  }
+
+  .tooltip {
+    margin-bottom: -1.5rem;
+    margin-right: 15rem;
+    width: 355px;
+    /* border: 2px solid red; */
+    height: 150px;
+  }
+  .tool {
+    width: 355px;
+    height: 80px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .tool ion-icon {
+    margin-left: 1.2rem;
+  }
+
+  .tool p {
+    margin-left: 1.5rem;
+  }
+
+  .right {
+    padding-bottom: 0.7rem;
+  }
+  .tooltip-box:hover {
+    background-color: var(--neutral-gray-blue);
+  }
+}
